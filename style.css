@@ -26,7 +26,7 @@ body{
             flex-direction: column;
             align-items: center;
             gap: 1.25rem;
-            max-width: 500px;
+            max-width: 31.25rem;
 
             h1 {
                 font-size: 2.5rem;
@@ -52,8 +52,8 @@ body{
             }
 
             .hero-lien a:hover {
-                transform: translateY(-3px);
-                box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+                transform: translateY(-0.187rem);
+                box-shadow: 0 0.375rem 0.937rem rgba(0, 0, 0, 0.2);
             }
 
             
@@ -65,7 +65,7 @@ body{
         .hero-logo img {
             height: 16rem;
             border-radius: 2rem;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 0.5rem 1.25rem rgba(0, 0, 0, 0.15);
             transition: transform 5s ease;
         }
 
@@ -74,7 +74,7 @@ body{
         }
 
         
-        @media (max-width: 768px) {
+        @media (max-width: 48rem) {
             flex-direction: column-reverse;
             gap: 2rem;
 
@@ -148,8 +148,8 @@ body{
                     width: 14rem; 
                     height: auto;
                     border-radius: 1rem; 
-                    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-                    transition: transform 0.3s ease;
+                    box-shadow: 0 0.25rem 0.50rem rgba(0,0,0,0.1);
+                    transition: transform 2s ease;
                 }
 
                 .image img:hover {
@@ -158,7 +158,7 @@ body{
             }
 
         
-            @media (max-width: 768px) {
+            @media (max-width: 48rem) {
                 .contenu-probleme {
                     flex-direction: column;
                     gap: 2rem;
@@ -170,7 +170,7 @@ body{
 
                 .image img {
                     width: 100%;
-                    max-width: 300px;
+                    max-width: 18.75rem;
                 }
             }
         }
@@ -194,50 +194,138 @@ body{
             display:flex;
             justify-content:center;
             gap:1.562rem;
-        }
 
-        .card{
-            background:white;
-            border-radius:0.937rem;
-            padding:1.562rem;
-            width:14.375rem;
-            box-shadow:0 0.312rem 0.937rem rgba(0,0,0,0.1);
-            text-align:left;
-            border:0.125rem solid #eee;
+            .card{
+                background:white;
+                border-radius:0.937rem;
+                padding:1.562rem;
+                width:14.375rem;
+                box-shadow:0 0.312rem 0.937rem rgba(0,0,0,0.1);
+                text-align:left;
+                border:0.125rem solid #eee;
 
 
+                
             
-           
 
-            .icon{
-                font-size:2.187rem;
-                margin-bottom:0.625rem;
-            }
+                .icon{
+                    font-size:2.187rem;
+                    margin-bottom:0.625rem;
+                }
 
-            .card h3{
-                margin: bottom 0.625rem;;
-            }
+                .card h3{
+                    margin: bottom 0.625rem;;
+                }
 
-            .card ul{
-                padding-left:1.25rem;
-                margin-bottom:1.25rem;
-            }
+                .card ul{
+                    padding-left:1.25rem;
+                    margin-bottom:1.25rem;
+                }
 
-            .card li{
-                margin: bottom 0.625rem;;
-            }
+                .card li{
+                    margin: bottom 0.625rem;;
+                }
 
-            .prix{
-                font-weight:bold;
-                color:#027a1c;
-                text-align:center;
+                .prix{
+                    font-weight:bold;
+                    color:#027a1c;
+                    text-align:center;
+                }
             }
         }
+
+       
         .card.active{
             border:0.125rem solid #027a1c;
         }
 
        
-            
+        .rendezvous {
+            display: flex;
+            justify-content: center;
+            padding: 2rem;
+            background: #fdf7f0;
+            width: 100%; /* Ajouté */
+            box-sizing: border-box; /* Ajouté */
+
+            .card {
+                display: flex;
+                align-items: center;
+                gap: 2rem;
+                background: #fff;
+                padding: 1.5rem 2rem;
+                border-radius: 2rem;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+                width: 100%; /* Modifié : 100% au lieu de max-width: 800px */
+                max-width: none; /* Ajouté : suppression de la limite */
+                flex-wrap: wrap;
+
+                .card-image {
+                    flex-shrink: 0; /* Ajouté : empêche l'image de rétrécir */
+                    
+                    img {
+                        width: 100px;
+                        height: 100px;
+                        object-fit: cover;
+                        border-radius: 50%;
+                        border: 3px solid var(--vert-secondaire);
+                    }
+                }
+
+                .card-content {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1rem;
+                    flex: 1; /* Ajouté : prend l'espace restant */
+
+                    h2 {
+                        font-size: 1.5rem;
+                        margin: 0;
+
+                        span {
+                            color: var(--vert-secondaire);
+                        }
+                    }
+
+                    p {
+                        margin: 0;
+                        font-size: 1rem;
+                        color: #333;
+                        line-height: 1.4;
+                    }
+
+                    .card-button {
+                        a {
+                            display: inline-block;
+                            background: #d9642c; 
+                            color: #fff;
+                            padding: 0.75rem 1.75rem;
+                            border-radius: 2rem;
+                            text-decoration: none;
+                            font-weight: bold;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+                            &:hover {
+                                transform: translateY(-3px);
+                                box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+                            }
+                        }
+                    }
+
+                    .author {
+                        font-size: 0.875rem;
+                        color: #666;
+                    }
+                }
+            }
+
+            @media (max-width: 768px) {
+                .card {
+                    flex-direction: column;
+                    align-items: center;
+                    text-align: center;
+                }
+            }
+        }
     }    
 }
