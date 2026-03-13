@@ -5,6 +5,24 @@
     --jaune:#eabe07;
     --rouge:#c61827;
     --jaune-prime:rgb(174, 213, 19);
+    --bleu-nuit:#0d1a26 ;
+    --blanc:#ffffff;
+    --gris:#efecec ;
+      --bg-hero: linear-gradient(135deg, #f8faf8 0%, #e8f5e9 100%);
+    --bg-footer-main: linear-gradient(135deg, #1b4332 0%, #2d6a4f 100%);
+    --bg-footer-bottom: #0d1f1a;
+    
+    /* ========== TEXTES ========== */
+    --text-dark: #1b4332;        /* Vert forêt - Titres */
+    --text-body: #40916c;        /* Vert moyen - Paragraphes */
+    --text-light: #74c69d;       /* Vert clair - Accents */
+    --text-white: #ffffff;
+    --text-muted: rgba(255,255,255,0.8);
+    
+    /* ========== ACCENTS ========== */
+    --accent-yellow: #c8d400;    /* Jaune prime MEB */
+    --accent-yellow-hover: #a8b800;
+    --accent-light: #d8f3dc;     /* Vert très pâle */
 }
 body{
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -14,7 +32,7 @@ body{
     top: 0;
     left: 0;
     right: 0;
-    background: #fff;
+    background:var(--bleu-nuit);
     box-shadow: 0 2px 20px rgba(0,0,0,0.1);
     z-index: 1000;
     padding: 0.75rem 0;
@@ -53,7 +71,7 @@ body{
             .entrepreneur {
                 font-size: 0.65rem;
                 font-weight: 600;
-                color: #1a1a1a;
+                color:var(--blanc);
                 letter-spacing: 1.5px;
                 text-transform: uppercase;
             }
@@ -145,8 +163,8 @@ body{
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--vert-principal);
-        color: black;
+        background: var(--bg-hero);
+        color: var(--text-dark);
         padding: 5rem 1rem;
         text-align: center;
         gap: 3rem;
@@ -162,18 +180,21 @@ body{
             h1 {
                 font-size: 2.5rem;
                 line-height: 1.2;
+                color: var(--text-dark);
             }
 
             p {
                 margin-top: 0;
                 font-size: 1.25rem;
                 line-height: 1.6;
-                color: #222;
+                color: var(--text-body);     /* Vert plus doux */
+                font-weight: 500;
             }
 
             .hero-lien a {
-                background: var(--jaune-prime);
-                color: black;
+                background: var(--accent-yellow);
+                color: var(--text-dark);     /* Contraste optimal */
+                font-weight: 700;
                 padding: 0.937rem 2rem;
                 border: none;
                 font-weight: bold;
@@ -185,11 +206,13 @@ body{
             .hero-lien a:hover {
                 transform: translateY(-0.187rem);
                 box-shadow: 0 0.375rem 0.937rem rgba(0, 0, 0, 0.2);
+                background: var(--accent-yellow-hover);
+                
             }
 
             
             span {
-                color: var(--jaune-prime);
+                color: var(--text-dark);
             }
         }
 
@@ -463,9 +486,10 @@ body{
     margin-top: 4rem;
 
     .footer-main {
-        background: var(--vert-principal);
-        color: #fff;
+        background: var(--bg-footer-main);  /* Vert foncé cohérent */
+        color: var(--text-white);
         padding: 4rem 0 3rem;
+       
     }
 
     .footer-container {
@@ -501,14 +525,14 @@ body{
                 .maison {
                     font-size: 1.6rem;
                     font-weight: 800;
-                    color: #fff;
+                    color: var(--text-white);
                     letter-spacing: -0.5px;
                 }
 
                 .entrepreneur {
                     font-size: 0.8rem;
                     font-weight: 600;
-                    color: rgba(255,255,255,0.8);
+                    color: var(--text-muted);
                     letter-spacing: 2px;
                     text-transform: uppercase;
                 }
@@ -516,7 +540,7 @@ body{
         }
 
         .tagline {
-            color: var(--vert-action);
+            color: var(--accent-yellow) !important;  /* "Ta maison. Ton réseau. Ton avenir." */
             font-weight: 700;
             font-size: 1.1rem;
             margin: 0;
@@ -533,22 +557,24 @@ body{
             display: flex;
             align-items: center;
             gap: 1rem;
-            color: rgba(255,255,255,0.9);
+            color: var(--text-muted);
             font-size: 1rem;
             line-height: 1.5;
 
             svg {
                 flex-shrink: 0;
-                color: var(--vert-action);
+                color: var(--accent-yellow);  /* Icônes jaunes */
             }
 
             &.phone-big {
                 text-decoration: none;
-                color: #fff;
                 background: rgba(255,255,255,0.1);
+                border: 2px solid var(--accent-yellow);
+                color: var(--text-white);
+                /*background: rgba(255,255,255,0.1);*/
                 padding: 1rem 1.5rem;
                 border-radius: 1rem;
-                border: 2px solid var(--vert-action);
+               /* border: 2px solid var(--vert-action);*/
                 transition: all 0.3s ease;
 
                 svg {
@@ -566,16 +592,17 @@ body{
                     display: block;
                     font-size: 1.5rem;
                     font-weight: 800;
-                    color: var(--vert-action);
+                    color: var(--accent-yellow);  /* WhatsApp en jaune */
                 }
 
                 &:hover {
-                    background: var(--vert-action);
+                    background: var(--accent-yellow);
+                    color: var(--text-dark);
                     transform: translateY(-3px);
                     box-shadow: 0 10px 30px rgba(24, 250, 34, 0.3);
 
                     svg, .number {
-                        color: var(--vert-principal);
+                        color: var(--text-dark);
                     }
 
                     .label {
@@ -587,13 +614,14 @@ body{
     }
 
     .footer-bottom {
-        background: #1a1a1a;
+        background: var(--bg-footer-bottom);  /* Encore plus foncé */
+        border-top: 3px solid var(--accent-yellow);
         padding: 1.5rem;
         text-align: center;
-        border-top: 4px solid var(--rouge);
+        border-top: 4px solid var();
 
         p {
-            color: rgba(255,255,255,0.6);
+            color: var(--text-muted);
             font-size: 0.9rem;
             margin: 0;
         }
